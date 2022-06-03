@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://crud.service.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://crud.service.org" xmlns:intf="http://crud.service.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://crud.service.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="modificarPersona">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:string"/>
+      <element name="in1" type="xsd:string"/>
+      <element name="in2" type="xsd:string"/>
+      <element name="in3" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modificarPersonaResponse">
+    <complexType/>
+   </element>
+   <element name="eliminaPersona">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminaPersonaResponse">
+    <complexType/>
+   </element>
+   <element name="altaPersona">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:int"/>
+      <element name="in1" type="xsd:string"/>
+      <element name="in2" type="xsd:string"/>
+      <element name="in3" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="altaPersonaResponse">
+    <complexType>
+     <sequence>
+      <element name="altaPersonaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaIndividualEstudiante">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaIndividualEstudianteResponse">
+    <complexType/>
+   </element>
+   <element name="consultaIdPersona">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaIdPersonaResponse">
+    <complexType>
+     <sequence>
+      <element name="consultaIdPersonaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="consultaIndividualEstudianteResponse">
+
+      <wsdl:part element="impl:consultaIndividualEstudianteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaIdPersonaResponse">
+
+      <wsdl:part element="impl:consultaIdPersonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modificarPersonaRequest">
+
+      <wsdl:part element="impl:modificarPersona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modificarPersonaResponse">
+
+      <wsdl:part element="impl:modificarPersonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminaPersonaRequest">
+
+      <wsdl:part element="impl:eliminaPersona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaIdPersonaRequest">
+
+      <wsdl:part element="impl:consultaIdPersona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="altaPersonaRequest">
+
+      <wsdl:part element="impl:altaPersona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaIndividualEstudianteRequest">
+
+      <wsdl:part element="impl:consultaIndividualEstudiante" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminaPersonaResponse">
+
+      <wsdl:part element="impl:eliminaPersonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="altaPersonaResponse">
+
+      <wsdl:part element="impl:altaPersonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServiceCrudPersona">
+
+      <wsdl:operation name="modificarPersona">
+
+         <wsdl:input message="impl:modificarPersonaRequest" name="modificarPersonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modificarPersonaResponse" name="modificarPersonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminaPersona">
+
+         <wsdl:input message="impl:eliminaPersonaRequest" name="eliminaPersonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:eliminaPersonaResponse" name="eliminaPersonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="altaPersona">
+
+         <wsdl:input message="impl:altaPersonaRequest" name="altaPersonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:altaPersonaResponse" name="altaPersonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaIndividualEstudiante">
+
+         <wsdl:input message="impl:consultaIndividualEstudianteRequest" name="consultaIndividualEstudianteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaIndividualEstudianteResponse" name="consultaIndividualEstudianteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaIdPersona">
+
+         <wsdl:input message="impl:consultaIdPersonaRequest" name="consultaIdPersonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaIdPersonaResponse" name="consultaIdPersonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiceCrudPersonaSoapBinding" type="impl:ServiceCrudPersona">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="modificarPersona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modificarPersonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modificarPersonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminaPersona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="eliminaPersonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="eliminaPersonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="altaPersona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="altaPersonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="altaPersonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaIndividualEstudiante">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaIndividualEstudianteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaIndividualEstudianteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaIdPersona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaIdPersonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaIdPersonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiceCrudPersonaService">
+
+      <wsdl:port binding="impl:ServiceCrudPersonaSoapBinding" name="ServiceCrudPersona">
+
+         <wsdlsoap:address location="http://localhost:7575/WebServiceServidorSOAP/services/ServiceCrudPersona"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

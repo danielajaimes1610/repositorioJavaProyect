@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServiceCrudPersonaService WSDL service -->
+
+  <service name="ServiceCrudPersona" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://crud.service.org"/>
+      <parameter name="wsdlServiceElement" value="ServiceCrudPersonaService"/>
+      <parameter name="schemaQualified" value="http://crud.service.org"/>
+      <parameter name="wsdlServicePort" value="ServiceCrudPersona"/>
+      <parameter name="className" value="org.service.crud.ServiceCrudPersona"/>
+      <parameter name="wsdlPortType" value="ServiceCrudPersona"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://crud.service.org" name="main" qname="operNS:main" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in0" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" name="modificarPersona" qname="operNS:modificarPersona" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in0" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in1" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in2" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in3" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" name="eliminaPersona" qname="operNS:eliminaPersona" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in0" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" xmlns:retNS="http://crud.service.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="altaPersona" qname="operNS:altaPersona" returnQName="retNS:altaPersonaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in0" type="tns:int"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in1" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in2" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in3" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" name="consultaIndividualEstudiante" qname="operNS:consultaIndividualEstudiante" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in0" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" xmlns:retNS="http://crud.service.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="consultaIdPersona" qname="operNS:consultaIdPersona" returnQName="retNS:consultaIdPersonaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in0" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" name="connectDataBaseOracle" qname="operNS:connectDataBaseOracle" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="connectDataBaseOracle altaPersona consultaIndividualEstudiante modificarPersona main eliminaPersona consultaIdPersona"/>
+
+  </service>
+</deployment>
